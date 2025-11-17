@@ -1,1 +1,40 @@
 @import "tailwindcss";
+
+@theme {
+  --color-mint-50: #f0fdf9;
+  --color-mint-100: #d9fef5;
+  --color-mint-200: #b3feeb;
+  --color-mint-300: #7cfdde;
+  --color-mint-400: #51f9d0;
+  --color-mint-500: #10f5ba;
+  --color-mint-600: #00e6a0;
+  --color-mint-700: #00ca84;
+  --color-mint-800: #00a866;
+  --color-mint-900: #008851;
+  --color-mint-950: #004d2e;
+
+  --color-light-bg: #FAFAFA;
+  --color-dark-bg: #1C1C1C;
+}
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+
+  body {
+    background-color: #FAFAFA;
+    color: #000000;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .dark body {
+    background-color: #1C1C1C;
+    color: #FFFFFF;
+  }
+}
+
+#root {
+  height: 100dvh;
+  width: 100dvw;
+}
