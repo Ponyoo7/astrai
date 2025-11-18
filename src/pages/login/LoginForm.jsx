@@ -7,18 +7,25 @@ import { useAppContext } from "../../core/context/AppContext"
 import { generateRandomNumber } from "../../shared/utils"
 
 export const LoginForm = () => {
+  //Proporciona la función send para realizar peticiones HTTP y el estado loading.
   const { send, loading } = useFetch()
+  //Proporciona la función changeUser para establecer la sesión.
   const { changeUser } = useAppContext()
+  //Permite la redirección programática a otra ruta.
   const navigate = useNavigate()
-
+  
+  //Maneja el estado local del formulario: el valor del campo name.
   const [name, setName] = useState("")
 
   const handleSubmit = async (e) => {
+    //Detiene el comportamiento por defecto de recarga del formulario HTML.
     e.preventDefault()
-
+    //Verifica que el campo name no esté vacío.
     if (!name) return
 
+    //Función para obtener un num aleatorio
     const randomNumber = generateRandomNumber()
+    //Construye la URL del avatar con el num aleatorio
     const avatar = `https://avatar.iran.liara.run/public/${randomNumber}`
 
     const body = {
@@ -26,15 +33,20 @@ export const LoginForm = () => {
       avatar
     }
 
+    //Petición a la API
     const { data, error } = await send(apiUrls.users, {
       method: 'POST',
+      //Incluye name y avatar
       body: JSON.stringify(body),
       headers: { 'content-type': 'application/json' },
     })
 
+    //si hay un error la función termina
     if (error || !data) return
 
+    //Llama a la función del contexto para establecer la sesión del usuario en React y en el localStorage
     changeUser(data)
+    //redirige al usuario a la página de inicio
     navigate('/', {
       replace: true
     })
@@ -46,7 +58,7 @@ export const LoginForm = () => {
         <label>Nombre</label>
         <input
           type="text"
-          onChange={(e) => setName(e.target.value)}
+          onChange={(e) => setName(e.target.value)} //se pasa a la variable setName, el estado del valor del nuevo nombre introducido.
           value={name}
           className="p-3 rounded-md border"
           placeholder="Introduce tu nombre"

@@ -2,9 +2,12 @@ import { IconMessage, IconTrash } from "@tabler/icons-react"
 import { useChatsContext } from "../../core/context/ChatsContext"
 import { useState } from "react"
 
+//Recibe el objeto completo del chat desde el componente padre (ChatList.jsx). Este objeto contiene el id y el name.
 export const ChatItem = ({ chat }) => {
-  const { handleDeleteChat } = useChatsContext()
 
+  //Extrae la función handleDeleteChat del contexto
+  const { handleDeleteChat } = useChatsContext()
+  //variable isHovering para controlar si el cursor del ratón está sobre el fila del chat
   const [isHovering, setIsHovering] = useState(false)
 
   return (
@@ -23,7 +26,6 @@ export const ChatItem = ({ chat }) => {
             <button onClick={() => handleDeleteChat(chat.id)}>
               <IconTrash size={22} />
             </button>
-
           </div>
 
         )

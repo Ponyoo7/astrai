@@ -7,7 +7,7 @@ export const useChatActions = () => {
   const deleteChat = async (chatId) => {
     const url = `${apiUrls.chats}/${chatId}`
 
-    const { data, error } = send(url, {
+    const { data, error } = await send(url, {
       method: 'DELETE'
     })
 

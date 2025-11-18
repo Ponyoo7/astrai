@@ -4,6 +4,8 @@ import { CreateChat } from './CreateChat'
 import { useChatsContext } from "../../core/context/ChatsContext"
 
 export const ChatList = () => {
+  //data: array con la lista de objetos del chat
+  //loading: booleano que indica si la lista de chats se está cargando desde la API
   const { data, loading } = useChatsContext()
 
   if (loading) {

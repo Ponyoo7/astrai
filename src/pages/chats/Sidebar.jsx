@@ -1,14 +1,28 @@
 import { ChatsContextProvider } from "../../core/context/ChatsContext"
 import { ChatList } from "./ChatList"
+import logoMini from "../../assets/images/logo_mini.png"
+import { User } from "./User"
 
 export const Sidebar = () => {
   return (
-    <aside className="grid grid-rows-[auto_1fr_auto] h-screen w-[250px] border-r">
-      <div>Titulo</div>
+    <aside className="grid grid-rows-[auto_1fr_auto] h-screen w-[300px] border-r border-gray-200 bg-white">
+
+      <div className="flex items-center p-4 border-b border-gray-200">
+        <img
+          src={logoMini}
+          alt="Company Logo"
+          className="h-15"
+        />
+
+        <h2 className="text-lg font-semibold text-gray-800">ASTRAI</h2>
+
+      </div>
       <ChatsContextProvider>
+        {/* Aquí se activa el estado de los chats (llama internamente a useChats()) */}
         <ChatList />
       </ChatsContextProvider>
-      <div>user</div>
+      {/* Muestra el avatar y nombre del usuario logueado */}
+      <User />
     </aside>
   )
 }
