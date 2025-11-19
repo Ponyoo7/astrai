@@ -16,7 +16,7 @@ export const ChatsContextProvider = ({ children }) => {
   //creación de un nuevo chat
   const handleOnCreateChat = async () => {
     //Ejecuta el hook useCreateChat, que envía la petición al backend
-    const res = await createChat()
+    const res = await createChat(data.length)
 
     if (!res) return
 

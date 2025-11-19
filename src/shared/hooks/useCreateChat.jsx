@@ -8,11 +8,11 @@ export const useCreateChat = () => {
   const { send } = useFetch()
   const navigate = useNavigate()
 
-  const createChat = async () => {
+  const createChat = async (chatNumber) => {
     if (!user) return
 
     const chatBody = {
-      name: "Nuevo Chat",
+      name: "Chat " + chatNumber,
       userId: user.id
     }
 

@@ -25,7 +25,7 @@ export const RootPage = () => {
         //Si la redirección no se ejecuta. se renderiza la interfaz principal de la página
         loading ? <IconLoader2 className="animate-spin" /> : (
           //Si no hay chats se muestra el botón empezar 
-          <button className="border p-2 rounded-md" onClick={createChat}>Empezar</button>
+          <button className="border p-2 rounded-md" onClick={() => createChat(1)}>Empezar</button>
         )
       }
 
