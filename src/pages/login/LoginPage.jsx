@@ -1,10 +1,24 @@
 import { LoginForm } from "./LoginForm"
 
+import logo from '../../assets/images/logo_mini.png'
+
 export const LoginPage = () => {
   return (
-    <main className="w-full h-full flex flex-col items-center justify-center">
-      <div className="shadow-xl w-72 sm:w-lg rounded-2xl p-12">
-        <h1 className="text-2xl text-center tracking-wider">ASTRAI</h1>
+    <main className="bg-light-bg w-full h-full flex flex-col items-center justify-center">
+      <div className="bg-white w-72 sm:w-lg rounded-2xl p-12">
+        <div className="flex flex-col items-center">
+          <img
+            src={logo}
+            className="w-20 mb-4"
+          />
+          <div className="flex flex-col gap-2">
+            <h1 className="tracking-light text-4xl text-center font-bold leading-tight dark:text-white">ASTRAI</h1>
+            <p className="text-userMessage">Tu asistente de IA personal</p>
+
+          </div>
+        </div>
+
+
         <LoginForm />
       </div>
     </main>

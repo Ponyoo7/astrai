@@ -13,7 +13,7 @@ export const LoginForm = () => {
   const { changeUser } = useAppContext()
   //Permite la redirección programática a otra ruta.
   const navigate = useNavigate()
-  
+
   //Maneja el estado local del formulario: el valor del campo name.
   const [name, setName] = useState("")
 
@@ -60,7 +60,7 @@ export const LoginForm = () => {
           type="text"
           onChange={(e) => setName(e.target.value)} //se pasa a la variable setName, el estado del valor del nuevo nombre introducido.
           value={name}
-          className="p-3 rounded-md border"
+          className="p-3 rounded-md border  border-border-color focus:outline-primary-focus"
           placeholder="Introduce tu nombre"
           required
           minLength={4}
@@ -70,7 +70,7 @@ export const LoginForm = () => {
       <button
         disabled={loading}
         type="submit"
-        className="p-2 border rounded-md cursor-pointer flex flex-row items-center justify-center gap-2"
+        className="bg-primary font-bold text-lg p-3 rounded-md cursor-pointer flex flex-row items-center justify-center gap-2 transition-colors ease-in duration-100 hover:bg-primary-hover focus:bg-primary-focus"
       >
 
         {
@@ -78,7 +78,7 @@ export const LoginForm = () => {
             <IconLoader2 className="animate-spin" />
           )
         }
-        Enviar
+        Iniciar sesión
       </button>
     </form>
   )
