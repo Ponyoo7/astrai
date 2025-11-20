@@ -19,10 +19,10 @@ export const ChatInput = () => {
   }
 
   return (
-    <div className="border-t border-border-color p-4 bg-white">
+    <div className="border-t border-border-color dark:border-border-color-dark p-4 bg-white dark:bg-dark-bg">
       <div className="border border-third rounded-md flex flex-row px-3 py-2 gap-2 items-center">
         <textarea
-          className="rounded-md w-full resize-none focus:outline-none"
+          className="rounded-md w-full resize-none focus:outline-none placeholder-current dark:placeholder-gray-200 text-black dark:text-white"
           value={value}
           onChange={(e) => setValue(e.target.value)}
           placeholder="Escribe un mensaje aquí..."

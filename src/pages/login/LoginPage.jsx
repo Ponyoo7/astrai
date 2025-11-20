@@ -1,11 +1,12 @@
 import { LoginForm } from "./LoginForm"
 
 import logo from '../../assets/images/logo_mini.png'
+import { ThemeSwitch } from "../../shared/components/ThemeSwitch"
 
 export const LoginPage = () => {
   return (
-    <main className="bg-light-bg w-full h-full flex flex-col items-center justify-center">
-      <div className="bg-white w-72 sm:w-lg rounded-2xl p-12 animate-fadeIn">
+    <main className="bg-light-bg dark:bg-black w-full h-full flex flex-col items-center justify-center relative">
+      <div className="bg-white dark:bg-dark-bg w-full sm:w-lg rounded-2xl p-12 animate-fadeIn">
         <div className="flex flex-col items-center">
           <img
             src={logo}
@@ -20,6 +21,9 @@ export const LoginPage = () => {
 
 
         <LoginForm />
+      </div>
+      <div className="absolute top-5 right-5">
+        <ThemeSwitch />
       </div>
     </main>
   )

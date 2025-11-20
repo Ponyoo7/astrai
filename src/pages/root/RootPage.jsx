@@ -2,6 +2,7 @@ import { IconLoader2, IconMessage } from "@tabler/icons-react"
 import { useNavigate } from "react-router"
 import { useCreateChat } from "../../shared/hooks/useCreateChat"
 import { useChats } from "../../shared/hooks/useChats"
+import { ThemeSwitch } from "../../shared/components/ThemeSwitch"
 
 export const RootPage = () => {
   //Proporciona la función createChat, que maneja la lógica de la API para crear una nueva conversación
@@ -20,7 +21,7 @@ export const RootPage = () => {
   }
 
   return (
-    <div className="font-display relative flex h-screen min-h-[600px] w-full flex-col items-center justify-center overflow-hidden bg-light-bg p-4 group/design-root">
+    <div className="font-display relative flex h-screen min-h-[600px] w-full flex-col items-center justify-center overflow-hidden bg-light-bg dark:bg-dark-bg p-4 group/design-root">
 
       <main className="relative z-10 flex w-full max-w-lg flex-col items-center justify-center text-center">
         {
@@ -37,7 +38,7 @@ export const RootPage = () => {
 
               {/* Textos */}
               <div className="flex flex-col items-center gap-4">
-                <h1 className="text-4xl font-bold leading-tight">
+                <h1 className="text-4xl font-bold leading-tight text-black dark:text-white">
                   ¡Te damos la bienvenida!
                 </h1>
                 <p className="text-userMessage text-base font-normal leading-normal max-w-md">
@@ -58,6 +59,9 @@ export const RootPage = () => {
           )
         }
       </main>
+      <div className="absolute top-5 right-5">
+        <ThemeSwitch />
+      </div>
     </div>
   )
 }

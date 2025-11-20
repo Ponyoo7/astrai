@@ -14,14 +14,14 @@ export const User = () => {
   }
 
   return (
-    <div className="p-4 border-t border-border-color flex flex-row gap-2 items-center justify-between">
+    <div className="p-4 border-t border-border-color dark:border-border-color-dark flex flex-row gap-2 items-center justify-between">
 
       <div className="flex flex-row gap-2 items-center">
         <img
           src={user.avatar}
           className="w-10"
         />
-        <p>
+        <p className="text-black dark:text-white hidden md:block">
           {user.name}
         </p>
       </div>

@@ -5,16 +5,16 @@ import { User } from "./User"
 
 export const Sidebar = () => {
   return (
-    <aside className="grid grid-rows-[auto_1fr_auto] h-screen w-[300px] border-r border-border-color bg-white">
+    <aside className="grid grid-rows-[auto_1fr_auto] h-screen w-[110px] md:w-[300px] border-r border-border-color dark:border-border-color-dark bg-white dark:bg-dark-bg">
 
-      <div className="flex items-center p-4 gap-4 border-b border-border-color">
+      <div className="flex items-center p-4 gap-4 border-b border-border-color dark:border-border-color-dark">
         <img
           src={logoMini}
           alt="Company Logo"
           className="h-10"
         />
 
-        <h2 className="text-lg font-semibold text-gray-800">ASTRAI</h2>
+        <h2 className="text-lg font-semibold text-gray-800 dark:text-white hidden md:block">ASTRAI</h2>
 
       </div>
       <ChatsContextProvider>

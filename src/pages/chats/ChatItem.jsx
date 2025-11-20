@@ -22,21 +22,21 @@ export const ChatItem = ({ chat, selected }) => {
   }
 
   return (
-    <div className={`flex flex-row justify-between items-center px-4 py-3 rounded-md cursor-pointer transition-colors ease-in duration-150 hover:bg-gray-200 ${selected && 'bg-primary/40'} animate-fadeIn`}
+    <div className={`flex flex-row justify-between items-center px-4 py-3 rounded-md cursor-pointer transition-colors ease-in duration-150 hover:bg-black/10 dark:hover:bg-white/10 ${selected && 'bg-primary/40'} animate-fadeIn`}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
       onClick={handleSelect}
     >
       <div className="flex flex-row gap-2 items-center">
-        <IconMessage size={22} />
-        <p className="text-md">{chat.name}</p>
+        <IconMessage className="text-md text-black dark:text-white" size={22} />
+        <p className="text-md text-black dark:text-white hidden md:block">{chat.name}</p>
 
       </div>
       {
         isHovering && (
           <div className="animate-fadeIn flex flex-row gap-1 items-center">
             <button onClick={handleDeleteClick}>
-              <IconTrash className="cursor-pointer transition-color ease-in duration-100 hover:text-black/70" size={22} />
+              <IconTrash className="cursor-pointer transition-color ease-in duration-100 text-black dark:text-white hover:text-black/70 dark:hover:text-white/70" size={22} />
             </button>
           </div>
 

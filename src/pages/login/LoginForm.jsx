@@ -55,12 +55,12 @@ export const LoginForm = () => {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-6">
       <div className="flex flex-col gap-1">
-        <label>Nombre</label>
+        <label className="text-black dark:text-white">Nombre</label>
         <input
           type="text"
           onChange={(e) => setName(e.target.value)} //se pasa a la variable setName, el estado del valor del nuevo nombre introducido.
           value={name}
-          className="p-3 rounded-md border  border-border-color focus:outline-primary-focus"
+          className="p-3 bg-input-light dark:bg-input-dark rounded-md border  border-border-color dark:border-border-color-dark focus:outline-primary-focus placeholder-current dark:placeholder-gray-200 text-black dark:text-white"
           placeholder="Introduce tu nombre"
           required
           minLength={4}
