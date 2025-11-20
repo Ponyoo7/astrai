@@ -14,11 +14,16 @@ export const AppContextProvider = ({ children }) => {
     setUser(user)//se actualiza el estado de user, para que los componentes se re-rendericen con el nuevo valor 
   }
 
+  const logout = () => {
+    localStorage.removeItem('user')
+    setUser()
+  }
+
   //Provee el estado actual(user)y la funcióon para cambiarlo (chancheUser)a todos los componentes hijos (children)
   return (
     <AppContext.Provider
       value={{
-        changeUser, user
+        changeUser, user, logout
       }}
     >
       {children}

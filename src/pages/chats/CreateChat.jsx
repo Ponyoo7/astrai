@@ -7,7 +7,7 @@ export const CreateChat = () => {
 
   return (
     <button
-      className="flex flex-row gap-2 items-center border p-2 rounded-md cursor-pointer"
+      className="flex flex-row gap-2 items-center bg-primary transition-colors ease-in duration-150 hover:bg-primary-hover focus:bg-primary-focus p-3 rounded-md cursor-pointer"
       onClick={handleOnCreateChat}
     >
       <IconEdit />

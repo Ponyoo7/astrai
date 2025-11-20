@@ -1,107 +1,26 @@
-import { useEffect, useState } from "react"
-import { useAI } from "../../shared/hooks/useAI"
-import { useFetch } from "../../shared/hooks/useFetch"
-import { apiUrls } from "../../shared/constants"
-import { useChatContext } from "../../core/context/ChatContext"
+import { useState } from "react"
+
 import { IconSend } from '@tabler/icons-react'
+import { useChatInput } from "../../shared/hooks/useChatInput"
 
 export const ChatInput = () => {
-  const { chat, setData } = useChatContext()
-  const { send } = useFetch()
-  const { sendMessageToAI, response } = useAI()
+  const { sendMessage } = useChatInput()
 
   const [value, setValue] = useState("")
 
-  const sendMessage = async () => {
+  const handleClick = () => {
     const userText = value
+
+    if (!userText) return
 
     setValue("")
 
-    const updatedChat = await createUserMessage(userText)
-
-    setData(updatedChat)
-
-    const text = await sendMessageToAI(userText)
-
-    const aiUpdatedChat = await createAIMessage(text, updatedChat.messages)
-
-    setData(aiUpdatedChat)
+    sendMessage(userText)
   }
-
-  const createUserMessage = async (userText) => {
-    const url = `${apiUrls.chats}/${chat.id}`
-
-    const userMessageBody = {
-      index: chat.messages.length,
-      content: userText,
-      transmitter: 'user'
-    }
-
-    const updateBody = {
-      ...chat,
-      messages: [...chat.messages, userMessageBody]
-    }
-
-    const { data } = await send(url, {
-      method: 'PUT',
-      body: JSON.stringify(updateBody),
-      headers: { 'content-type': 'application/json' },
-
-    })
-
-    return data
-  }
-
-  const createAIMessage = async (aiText, messages) => {
-    const url = `${apiUrls.chats}/${chat.id}`
-
-    const aiMessageBody = {
-      index: messages.length,
-      content: aiText,
-      transmitter: 'ai'
-    }
-
-    const updateBody = {
-      ...chat,
-      messages: [...messages, aiMessageBody]
-    }
-
-    const { data } = await send(url, {
-      method: 'PUT',
-      body: JSON.stringify(updateBody),
-      headers: { 'content-type': 'application/json' },
-
-    })
-
-    return data
-  }
-
-  useEffect(() => {
-    if (!response) return
-    let messages = chat.messages
-    const lastMessage = messages.at(-1)
-
-    if (lastMessage.transmitter === 'ai') {
-      messages.pop()
-    }
-
-    const aiMessageBody = {
-      index: chat.messages.length,
-      content: response,
-      transmitter: 'ai'
-    }
-
-    setData({
-      ...chat,
-      messages: [...messages, aiMessageBody]
-    })
-
-
-  }, [response])
 
   return (
-    <div className="border-t p-4">
-      <div className="border rounded-md flex flex-row px-3 py-2 gap-2 items-center">
+    <div className="border-t border-border-color p-4 bg-white">
+      <div className="border border-third rounded-md flex flex-row px-3 py-2 gap-2 items-center">
         <textarea
           className="rounded-md w-full resize-none focus:outline-none"
           value={value}
@@ -110,7 +29,11 @@ export const ChatInput = () => {
 
         ></textarea>
 
-        <button className="p-2 rounded-md w-10 h-10 bg-mint-500" onClick={sendMessage}>
+        <button
+          className="p-2 rounded-md w-10 h-10 bg-primary hover:bg-primary-hover focus:bg-primary-focus disabled:bg-primary-disabled disabled:cursor-default cursor-pointer transition-colors duration-150 ease-in"
+          onClick={handleClick}
+          disabled={!value}
+        >
           <IconSend />
         </button>
       </div>

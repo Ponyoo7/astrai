@@ -22,7 +22,7 @@ export const ChatItem = ({ chat, selected }) => {
   }
 
   return (
-    <div className={`flex flex-row justify-between items-center px-4 py-3 rounded-md cursor-pointer hover:bg-mint-400 ${selected && 'bg-blue-400'}`}
+    <div className={`flex flex-row justify-between items-center px-4 py-3 rounded-md cursor-pointer transition-colors ease-in duration-150 hover:bg-gray-200 ${selected && 'bg-primary/40'} animate-fadeIn`}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
       onClick={handleSelect}
@@ -34,9 +34,9 @@ export const ChatItem = ({ chat, selected }) => {
       </div>
       {
         isHovering && (
-          <div className="flex flex-row gap-1 items-center">
+          <div className="animate-fadeIn flex flex-row gap-1 items-center">
             <button onClick={handleDeleteClick}>
-              <IconTrash size={22} />
+              <IconTrash className="cursor-pointer transition-color ease-in duration-100 hover:text-black/70" size={22} />
             </button>
           </div>
 

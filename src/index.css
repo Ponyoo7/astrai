@@ -4,6 +4,7 @@
   --color-primary: #80ED99;
   --color-primary-hover: #6CB27F;
   --color-primary-focus: #5A9B6C;
+  --color-primary-disabled: #C0E0C0;
 
   --color-third: #6cb27F;
 
@@ -14,6 +15,19 @@
 
   --color-light-bg: #f6f8f7;
   --color-dark-bg: #1C1C1C;
+
+  --animate-fadeIn: fadeIn 0.2s ease-in;
+
+  @keyframes fadeIn {
+
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
 }
 
 @layer base {

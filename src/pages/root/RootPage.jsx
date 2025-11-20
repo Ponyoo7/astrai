@@ -22,15 +22,15 @@ export const RootPage = () => {
   return (
     <div className="font-display relative flex h-screen min-h-[600px] w-full flex-col items-center justify-center overflow-hidden bg-light-bg p-4 group/design-root">
 
-      <main className="relative z-10 flex w-full max-w-lg flex-col items-center justify-center space-y-8 rounded-xl px-4 py-10 text-center">
+      <main className="relative z-10 flex w-full max-w-lg flex-col items-center justify-center text-center">
         {
           loading ? (
             <IconLoader2 className="animate-spin text-primary" size={48} />
           ) : (
-            <>
+            <div className="animate-fadeIn flex flex-col items-center space-y-8 rounded-xl px-4 py-10 ">
               {/* Icono: Aquí se añade el círculo exterior (120px y opacidad 20) */}
-              <div className="relative flex h-[120px] w-[120px] items-center justify-center rounded-full bg-primary bg-opacity-20">
-                <div className="flex h-[90px] w-[90px] items-center justify-center rounded-full bg-primary bg-opacity-40">
+              <div className="relative flex h-[140px] w-[140px] items-center justify-center rounded-full bg-primary/40">
+                <div className="flex h-[100px] w-[100px] items-center justify-center rounded-full bg-primary">
                   <IconMessage size={48} stroke={1.5} />
                 </div>
               </div>
@@ -54,7 +54,7 @@ export const RootPage = () => {
                   <span className="truncate">Empezar a Chatear</span>
                 </button>
               </div>
-            </>
+            </div>
           )
         }
       </main>

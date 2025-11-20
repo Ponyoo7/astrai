@@ -70,7 +70,7 @@ export const LoginForm = () => {
       <button
         disabled={loading}
         type="submit"
-        className="bg-primary font-bold text-lg p-3 rounded-md cursor-pointer flex flex-row items-center justify-center gap-2 transition-colors ease-in duration-100 hover:bg-primary-hover focus:bg-primary-focus"
+        className="bg-primary font-bold text-lg p-3 rounded-md cursor-pointer flex flex-row items-center justify-center gap-2 transition-colors ease-in duration-100 hover:bg-primary-hover focus:bg-primary-focus disabled:bg-primary-disabled"
       >
 
         {

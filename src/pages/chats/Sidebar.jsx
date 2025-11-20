@@ -5,13 +5,13 @@ import { User } from "./User"
 
 export const Sidebar = () => {
   return (
-    <aside className="grid grid-rows-[auto_1fr_auto] h-screen w-[300px] border-r border-gray-200 bg-white">
+    <aside className="grid grid-rows-[auto_1fr_auto] h-screen w-[300px] border-r border-border-color bg-white">
 
-      <div className="flex items-center p-4 border-b border-gray-200">
+      <div className="flex items-center p-4 gap-4 border-b border-border-color">
         <img
           src={logoMini}
           alt="Company Logo"
-          className="h-15"
+          className="h-10"
         />
 
         <h2 className="text-lg font-semibold text-gray-800">ASTRAI</h2>

@@ -7,8 +7,8 @@ export const ChatMessages = () => {
   return (
     <div className="grid grid-cols-2 auto-rows-min p-4 gap-6 overflow-auto">
       {
-        chat && chat.messages.map((m) => (
-          <MessageItem message={m} />
+        chat && chat.messages.map((m, i) => (
+          <MessageItem key={`${chat.id}${i}`} message={m} />
         ))
       }
     </div>

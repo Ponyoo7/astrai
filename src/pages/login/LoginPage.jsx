@@ -5,7 +5,7 @@ import logo from '../../assets/images/logo_mini.png'
 export const LoginPage = () => {
   return (
     <main className="bg-light-bg w-full h-full flex flex-col items-center justify-center">
-      <div className="bg-white w-72 sm:w-lg rounded-2xl p-12">
+      <div className="bg-white w-72 sm:w-lg rounded-2xl p-12 animate-fadeIn">
         <div className="flex flex-col items-center">
           <img
             src={logo}
