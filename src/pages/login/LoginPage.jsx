@@ -13,7 +13,7 @@ export const LoginPage = () => {
             className="w-20 mb-4"
           />
           <div className="flex flex-col gap-2">
-            <h1 className="tracking-light text-4xl text-center font-bold leading-tight dark:text-white">ASTRAI</h1>
+            <h1 className="tracking-light text-4xl text-center font-bold leading-tight text-black dark:text-white">ASTRAI</h1>
             <p className="text-userMessage">Tu asistente de IA personal</p>
 
           </div>

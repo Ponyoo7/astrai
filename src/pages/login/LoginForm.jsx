@@ -60,7 +60,7 @@ export const LoginForm = () => {
           type="text"
           onChange={(e) => setName(e.target.value)} //se pasa a la variable setName, el estado del valor del nuevo nombre introducido.
           value={name}
-          className="p-3 bg-input-light dark:bg-input-dark rounded-md border  border-border-color dark:border-border-color-dark focus:outline-primary-focus placeholder-current dark:placeholder-gray-200 text-black dark:text-white"
+          className="p-3 bg-input-light dark:bg-input-dark rounded-md border  border-border-color dark:border-border-color-dark focus:outline-none focus:border-primary-focus placeholder-current dark:placeholder-gray-200 text-black dark:text-white"
           placeholder="Introduce tu nombre"
           required
           minLength={4}
@@ -70,7 +70,7 @@ export const LoginForm = () => {
       <button
         disabled={loading}
         type="submit"
-        className="bg-primary font-bold text-lg p-3 rounded-md cursor-pointer flex flex-row items-center justify-center gap-2 transition-colors ease-in duration-100 hover:bg-primary-hover focus:bg-primary-focus disabled:bg-primary-disabled"
+        className="bg-primary font-bold text-lg p-3 rounded-md cursor-pointer flex flex-row items-center justify-center gap-2 transition-colors ease-in duration-100 hover:bg-primary-hover focus:bg-primary-focus disabled:bg-primary-disabled text-black"
       >
 
         {

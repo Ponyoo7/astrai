@@ -32,7 +32,7 @@ export const RootPage = () => {
               {/* Icono: Aquí se añade el círculo exterior (120px y opacidad 20) */}
               <div className="relative flex h-[140px] w-[140px] items-center justify-center rounded-full bg-primary/40">
                 <div className="flex h-[100px] w-[100px] items-center justify-center rounded-full bg-primary">
-                  <IconMessage size={48} stroke={1.5} />
+                  <IconMessage className="text-black" size={48} stroke={1.5} />
                 </div>
               </div>
 
@@ -50,7 +50,7 @@ export const RootPage = () => {
               <div className="flex pt-4 justify-center">
                 <button
                   onClick={() => createChat(1)}
-                  className="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary hover:bg-primary-hover text-base font-bold leading-normal tracking-[0.015em] transition-transform duration-200 ease-in-out hover:scale-105 focus:ring-2 focus:ring-primary-focus outline-none"
+                  className="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary hover:bg-primary-hover text-base font-bold leading-normal tracking-[0.015em] transition-transform duration-200 ease-in-out hover:scale-105 focus:ring-2 focus:ring-primary-focus outline-none text-black"
                 >
                   <span className="truncate">Empezar a Chatear</span>
                 </button>
