@@ -12,8 +12,7 @@ export const useChatInput = () => {
   const sendMessage = async (userText) => {
     const updatedChat = await createUserMessage(userText)
 
-    setData(updatedChat)
-
+    setData(updatedChat)//actualiza el contexto con mensaje del usuario
     const text = await sendMessageToAI(userText)
 
     const aiUpdatedChat = await createAIMessage(text, updatedChat.messages)
@@ -32,9 +31,10 @@ export const useChatInput = () => {
 
     const updateBody = {
       ...chat,
-      messages: [...chat.messages, userMessageBody]
+      messages: [...chat.messages, userMessageBody]//remplaza messages con array nuevo que contiene los mensajes anteriores + nuevo mensaje del usuario
     }
 
+    //Se actualiza el chat con los mensajes
     const { data } = await send(url, {
       method: 'PUT',
       body: JSON.stringify(updateBody),
@@ -71,6 +71,7 @@ export const useChatInput = () => {
 
   useEffect(() => {
     if (!response) return
+    
     let messages = chat.messages
     const lastMessage = messages.at(-1)
 

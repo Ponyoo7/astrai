@@ -36,7 +36,7 @@ export const useFetch = (url, options) => {
     if (!url || !options) return
 
     send(url, options)
-  }, [])
+  }, [])//sols una vegada
 
   return {
     send,

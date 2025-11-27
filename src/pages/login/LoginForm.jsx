@@ -23,6 +23,7 @@ export const LoginForm = () => {
     //Verifica que el campo name no esté vacío.
     if (!name) return
 
+    
     //Función para obtener un num aleatorio
     const randomNumber = generateRandomNumber()
     //Construye la URL del avatar con el num aleatorio

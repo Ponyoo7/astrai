@@ -1,35 +1,99 @@
-# 💬 ASTRAI: El teu Assistent d'IA Personal 🚀
+# ASTRAI: Tu Asistente de IA Personal
 
-Aplicació web de xat impulsada per l'API de Gemini (Google Gen AI) i desenvolupada amb React. Permet als usuaris iniciar sessió, crear, eliminar i gestionar converses amb la IA.
+Aplicación web de chat impulsada por la API de Gemini (Google Gen AI) y desarrollada con React. Permite a los usuarios iniciar sesión, crear, eliminar y gestionar conversaciones con la IA de forma sencilla e intuitiva.
 
----
+Proyecto desplegado en Vercel: (añade aquí tu URL de despliegue)
 
-## 1. Tecnologies Utilitzades 🛠️
+## Tecnologías Utilizadas
 
-Aquest projecte ha estat construït utilitzant una arquitectura de Frontend pur que consumeix dues APIs externes (Backend simulada i API de Gemini).
+Este proyecto ha sido construido con una arquitectura Frontend pura, consumiendo dos APIs externas: una API simulada (para usuarios y conversaciones) y la API de Google Gen AI.
 
-* **Frontend:** **React** (amb **Vite**), **JavaScript (ES6+)**.
-* **Gestió d'Estats:** **React Context** (utilitzat per a la gestió global de l'usuari i la gestió de l'estat dels xats).
-* **Estils:** **Tailwind CSS** (amb personalització de colors).
-* **Icones:** **Tabler Icons (React)**.
-* **API de Backend (Mockup):** **MockAPI** (per a la persistència d'usuaris i converses).
-* **API d'IA:** **Google Gen AI** (Model `gemini-2.5-flash-lite`).
-* **Altres:** **Avatar Generator API** (`https://avatar.iran.liara.run/`) per a la generació dinàmica d'imatges de perfil.
+### Frontend
 
----
+- React con Vite
+- JavaScript (ES6+)
 
-## 2. Prerequisits 📋
+### Gestión de Estado
 
-Per poder clonar, compilar i executar el projecte localment, necessitareu:
+- React Context para la gestión global del usuario y del estado de los chats.
 
+### Estilos
 
+- Tailwind CSS con paleta de colores personalizada.
 
----
+### Iconos
 
-## 3. Instal·lació i Configuració Local ⚙️
+- Tabler Icons (React)
 
-Segueix aquests passos per tenir l'aplicació ASTRAI funcionant al teu entorn.
+### Backend Simulado
 
-### 3.1. Clonar el Repositori
+- MockAPI para la persistencia de usuarios y conversaciones.
 
+### Inteligencia Artificial
 
+- Google Gen AI — Modelo gemini-2.5-flash-lite
+
+### Generación Dinámica de Avatares
+
+- Avatar Generator API: https://avatar.iran.liara.run/
+
+## Características Principales
+
+- Inicio de sesión con persistencia real en MockAPI
+- Creación, consulta y eliminación de conversaciones
+- Respuestas rápidas gracias al modelo Gemini Flash Lite
+- Contexto de conversación mantenido en cada chat
+- Avatares dinámicos para cada usuario
+- Modo claro/oscuro (si aplica)
+- Diseño totalmente responsive
+- Despliegue optimizado en Vercel
+
+## Instalación y Ejecución
+
+### Requisitos previos
+
+- Node.js 18+
+- Cuenta en Google AI Studio con API Key válida
+- Cuenta en MockAPI
+
+### Pasos
+
+1. Clonar el repositorio
+   ```bash
+   git clone https://github.com/tuusuario/astrai.git
+   ```
+
+2. Entrar en la carpeta del proyecto
+   ```bash
+   cd astrai
+   ```
+
+3. Instalar dependencias
+   ```bash
+   npm install
+   ```
+
+4. Crear archivo de entorno
+   ```bash
+   cp .env.example .env
+   # Añadir tu API Key de Gemini y las URLs de MockAPI
+   ```
+
+5. Levantar el servidor de desarrollo
+   ```bash
+   npm run dev
+   ```
+
+## Despliegue
+
+El proyecto está desplegado en Vercel, permitiendo un rendimiento óptimo y actualizaciones rápidas mediante integración continua.
+
+Enlace al despliegue: https://astrai-eight.vercel.app/
+
+## Próximas Mejoras
+
+- Organización avanzada de chats (carpetas o etiquetas)
+- Edición de mensajes
+- Entrada por voz
+- Integración con más modelos de IA
+- Mejoras en la lógica de autenticación

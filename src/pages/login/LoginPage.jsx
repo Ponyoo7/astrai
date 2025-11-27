@@ -23,7 +23,7 @@ export const LoginPage = () => {
         <LoginForm />
       </div>
       <div className="absolute top-5 right-5">
-        <ThemeSwitch />
+        <ThemeSwitch /> // per a tema oscur
       </div>
     </main>
   )

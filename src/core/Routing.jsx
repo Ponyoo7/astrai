@@ -5,7 +5,7 @@ import { RootPage } from "../pages/root/RootPage"
 import { ChatsPage } from "../pages/chats/ChatsPage"
 
 export const Routing = () => {
-  const { user } = useAppContext() // ptoporciona acceso al estado global del usuario
+  const { user } = useAppContext() // agafa el usuari
 
   return (
     <Routes>
