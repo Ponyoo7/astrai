@@ -59,7 +59,7 @@ export const LoginForm = () => {
         <label className="text-black dark:text-white">Nombre</label>
         <input
           type="text"
-          onChange={(e) => setName(e.target.value)} //se pasa a la variable setName, el estado del valor del nuevo nombre introducido.
+          onChange={(e) => setName(e.target.value)} 
           value={name}
           className="p-3 bg-input-light dark:bg-input-dark rounded-md border  border-border-color dark:border-border-color-dark focus:outline-none focus:border-primary-focus placeholder-current dark:placeholder-gray-200 text-black dark:text-white"
           placeholder="Introduce tu nombre"
